@@ -55,7 +55,8 @@ def main():
             print('Color invalido')
             continue
         color = color.split(',')
-        color = [int(color[0]) / 255, int(color[1]) / 255, int(color[2]) / 255]
+        color = map(lambda x: int(x) / 255, color)
+        color = list(color)
         result = model.predict([color])[0][0]
         print('es claro' if result >= 0.5 else 'es oscuro')
         print('el resultado fue {}'.format(result))
