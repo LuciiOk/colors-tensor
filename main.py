@@ -32,7 +32,7 @@ model = tf.keras.Sequential([layer]) # aqui se pone el numero de capas, en este 
 
 model.compile(
     # aqui se pone el valor de la tasa de aprendizaje, mientras mas pequeño mas lento pero mas preciso
-    optimizer=tf.keras.optimizers.Adam(0.4),
+    optimizer=tf.keras.optimizers.Adam(0.4), # aqui se pone el valor de la tasa de aprendizaje, Adam es el optimizador, mientras mas pequeño mas lento pero mas preciso
     loss='mean_squared_error',  # aqui se pone el valor de la funcion de perdida
 )
 
@@ -40,9 +40,9 @@ history = model.fit(colors, labels, epochs=200, verbose=False)
 print("Finished training the model")
 
 # aqui se pone el numero de epocas (epocas son los ciclos de entrenamiento)
-plt.xlabel('Epoch Number')
-plt.ylabel("Loss Magnitude")  # aqui se pone el valor de la perdida
-plt.plot(history.history['loss'])  # aqui se pone el valor de la perdida
+plt.xlabel('Epoch Number') # aqui se pone el numero de epocas, las epocas son los ciclos de entrenamiento, mientras mas epocas mas preciso pero mas lento
+plt.ylabel("Loss Magnitude")  # aqui se pone el valor de la perdida, la perdida es el error que se comete al predecir
+plt.plot(history.history['loss'])  # aqui se pone el valor de la perdida, la perdida es el error que se comete al predecir
 
 
 def main():
