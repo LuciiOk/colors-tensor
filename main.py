@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import tensorflow as tf
 
+# estos son los colores que se van a usar para entrenar la red neuronal, los colores estan en RGB
 colors = [
     [255, 255, 255], [0, 0, 0], [255, 0, 0],
     [0, 255, 0], [0, 0, 255], [18, 52, 18],
@@ -21,6 +22,7 @@ labels = [
     "light", "dark", "dark", 'light', "dark", "dark", "dark", "dark", "dark", "dark"
 ]
 
+# aqui se normalizan los colores, se dividen entre 255 para que queden entre 0 y 1
 for i in range(len(colors)):
     colors[i] = [colors[i][0] / 255, colors[i][1] / 255, colors[i][2] / 255]
 
