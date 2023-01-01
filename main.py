@@ -27,8 +27,8 @@ for i in range(len(colors)):
 for i in range(len(labels)):
     labels[i] = 0 if labels[i] == "dark" else 1
 
-layer = tf.keras.layers.Dense(units=1, input_shape=[3])
-model = tf.keras.Sequential([layer])
+layer = tf.keras.layers.Dense(units=4, input_shape=[3]) # aqui se pone el numero de neuronas y el numero de entradas
+model = tf.keras.Sequential([layer]) # aqui se pone el numero de capas, en este caso solo es una capa oculta
 
 model.compile(
     # aqui se pone el valor de la tasa de aprendizaje, mientras mas pequeño mas lento pero mas preciso
